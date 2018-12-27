@@ -1,3 +1,5 @@
+current_stage := 0
+
 compile:
 	stack build
 
@@ -17,10 +19,10 @@ download_tester_mac:
 
 test: compile
 	echo ""
-	./tester/redis-challenge-tester --binary-path=./spawn_redis_server.sh
+	./tester/redis-challenge-tester --stage $(current_stage) --binary-path=./spawn_redis_server.sh
 
 test_debug: compile
-	./tester/redis-challenge-tester --debug --binary-path=./spawn_redis_server.sh
+	./tester/redis-challenge-tester --stage $(current_stage) --binary-path=./spawn_redis_server.sh --debug
 
 test_and_report: compile
-	./tester/redis-challenge-tester --binary-path=./spawn_redis_server.sh --report --api-key=$$REDIS_CHALLENGE_API_KEY
+	./tester/redis-challenge-tester --stage $(current_stage) --binary-path=./spawn_redis_server.sh --report --api-key=$$REDIS_CHALLENGE_API_KEY

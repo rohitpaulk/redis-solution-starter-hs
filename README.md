@@ -17,3 +17,4 @@ This is a starting point for Haskell solutions to the Redis Challenge.
 - Implement the required feature in `app/Main.hs`, iterate until `make test` passes.
 - If you want more verbose output for errors, use `make test_debug` instead of `make test`)
 - Once `make test` passes, run `make test_and_report`.
+- Bump `current_stage` in your Makefile to go to the next stage!
